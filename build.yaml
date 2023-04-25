@@ -14,16 +14,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: corne_left
+    shield: SHIELD_CHIPPER_LEFT
   - board: seeeduino_xiao_ble
-    shield: corne_right
-include:
-  - board: nice_nano_v2
-    shield: corne_left
-  - board: nice_nano_v2
-    shield: corne_right
-include:
-  - board: nice_nano_v2
-    shield: corne_left
-  - board: nice_nano_v2
-    shield: corne_right
+    shield: SHIELD_CHIPPER_RIGHT
+
