@@ -108,7 +108,6 @@
         compatible = "zmk,behavior-mod-morph";
         label = "u_caps_word";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
         bindings = <&caps_word>, <&kp CAPS>;
         mods = <(MOD_LSFT|MOD_RSFT)>; 
     }; 
