@@ -134,6 +134,11 @@
             >;
         };
 
+        extra_layer {
+            label = "EXTRA";
+            bindings <>;
+        };
+
         button_layer {
             label = "BUTTON";
             bindings = <
