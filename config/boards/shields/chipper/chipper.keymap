@@ -104,8 +104,8 @@
 };
 
 #define U_BASE   0
-#define U_EXTRA  1
-#define U_TAP    2
+// #define U_EXTRA  1 //extra layer when you want an extra base layer for eg. games
+// #define U_TAP    2 //layer without homerow mods or any other mods
 #define U_BUTTON 3
 #define U_NAV    4
 #define U_MOUSE  5
@@ -134,18 +134,13 @@
             >;
         };
 
-        extra_layer {
-            label = "EXTRA";
-            bindings <>;
-        };
-
         button_layer {
             label = "BUTTON";
             bindings = <
-U_RDO             &kp W         &kp E        	   &kp R            &kp T              		&kp Y            &kp U             &kp I            &kp O           &kp P             
-&u_mt LGUI A      &u_mt LALT S  &u_mt LCTRL D      &u_mt LSHFT F    &kp G              		&kp H            &u_mt LSHFT J     &u_mt LCTRL K    &u_mt LALT L    &u_mt LGUI SQT   
-&u_lt U_BUTTON Z  &u_mt RALT X  &kp C              &kp V            &kp B              	    &kp N            &kp M             &kp COMMA        &u_mt RALT DOT  &u_lt U_BUTTON SLASH
-&none             &none         &u_lt U_MEDIA ESC  &u_lt U_NAV SPC  &u_lt U_MOUSE TAB		&u_lt U_SYM RET  &u_lt U_NUM BSPC  &u_lt U_FUN DEL  &none           &none
+U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
+&kp LGUI         &kp LALT         &kp LCTRL        &kp LSHFT        U_NU             U_NU             &kp LSHFT        &kp LCTRL        &kp LALT         &kp LGUI         
+U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
+&none             &none             &none           &none           &none           &none           &none           &none           &none             &none
             >;
         };
     };
