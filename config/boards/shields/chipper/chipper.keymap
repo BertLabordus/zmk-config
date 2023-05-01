@@ -92,6 +92,11 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+  };
+};
+
+/ {
+  behaviors {
     u_lt: u_lt {
       compatible = "zmk,behavior-hold-tap";
       label = "u_lt";
@@ -100,18 +105,6 @@
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
-  };
-};
-
-/ {
-  behaviors {
-    u_caps_word: u_caps_word { 
-      compatible = "zmk,behavior-mod-morph"; 
-      label = "u_caps_word"; 
-      #binding-cells = <0>; 
-      bindings = <&caps_word>, <&kp CAPS>; 
-      mods = <(MOD_LSFT|MOD_RSFT)>; 
-    }; 
   };
 };
 
