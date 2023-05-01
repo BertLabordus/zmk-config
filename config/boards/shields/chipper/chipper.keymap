@@ -162,16 +162,5 @@ U_UND            U_CUT            U_CPY            U_PST            U_RDO       
             >;
         };
 
-        navigation_layer {
-            label = "NAV";
-            bindings = <
-&none      &none      &none       &none       &none      U_RDO          U_PST      U_CPY       U_CUT       U_UND             
-&kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &none      &u_caps_word   &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT         
-&none      &kp RALT   &none       &none       &none      &kp INS        &kp HOME   &kp PG_DN   &kp PG_UP   &kp END           
-&none      &none      &none       &none       &none      &kp RET        &kp BSPC   &kp DEL     &none       &none
-            >;
-        };
-
-        
     };
 };
