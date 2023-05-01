@@ -114,6 +114,12 @@
 #define U_SYM    8
 #define U_FUN    9
 
+#define U_RDO &kp LC(Y)
+#define U_PST &kp LC(V)
+#define U_CPY &kp LC(C)
+#define U_CUT &kp LC(X)
+#define U_UND &kp LC(Z)
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -126,7 +132,24 @@
 &u_lt U_BUTTON Z  &u_mt RALT X  &kp C              &kp V            &kp B              	    &kp N            &kp M             &kp COMMA        &u_mt RALT DOT  &u_lt U_BUTTON SLASH
 &none             &none         &u_lt U_MEDIA ESC  &u_lt U_NAV SPC  &u_lt U_MOUSE TAB		&u_lt U_SYM RET  &u_lt U_NUM BSPC  &u_lt U_FUN DEL  &none           &none
                     >;
-		
                 };
-        };
+            
+        extra_layer {
+            label = "EXTRA";
+        }
+
+        tap_layer {
+            label = "TAP";
+        }
+
+        button_layer {
+            label = "BUTTON";
+            bindings = <
+U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
+&kp LGUI         &kp LALT         &kp LCTRL        &kp LSHFT        U_NU             U_NU             &kp LSHFT        &kp LCTRL        &kp LALT         &kp LGUI         
+U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
+&none             &none             &none           &none           &none           &none           &none           &none           &none             &none
+            >;
+        }
+    };
 };
