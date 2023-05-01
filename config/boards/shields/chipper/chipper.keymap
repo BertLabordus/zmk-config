@@ -102,17 +102,7 @@
   };
 };
 
-/ {
-  behaviors {
-    u_caps_word: u_caps_word {
-        compatible = "zmk,behavior-mod-morph";
-        label = "u_caps_word";
-        #binding-cells = <0>;
-        bindings = <&caps_word>, <&kp CAPS>;
-        mods = <(MOD_LSFT|MOD_RSFT)>; 
-    }; 
-  };
-};
+
 
 #define U_NP &none // key is not present
 #define U_NA &none // present but not available for use
@@ -165,7 +155,7 @@ U_UND            U_CUT            U_CPY            U_PST            U_RDO       
             label = "NAV";
             bindings = <
 &none      &none      &none       &none       &none      U_RDO          U_PST      U_CPY       U_CUT       U_UND             
-&kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &none      &u_caps_word   &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT         
+&kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &none      &kp CAPS   &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT         
 &none      &kp RALT   &none       &none       &none      &kp INS        &kp HOME   &kp PG_DN   &kp PG_UP   &kp END           
 &none      &none      &none       &none       &none      &kp RET        &kp BSPC   &kp DEL     &none       &none
             >;
