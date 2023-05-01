@@ -136,11 +136,11 @@
             
         extra_layer {
             label = "EXTRA";
-        }
+        };
 
         tap_layer {
             label = "TAP";
-        }
+        };
 
         button_layer {
             label = "BUTTON";
@@ -150,6 +150,6 @@ U_UND            U_CUT            U_CPY            U_PST            U_RDO       
 U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
 &none             &none             &none           &none           &none           &none           &none           &none           &none             &none
             >;
-        }
+        };
     };
 };
