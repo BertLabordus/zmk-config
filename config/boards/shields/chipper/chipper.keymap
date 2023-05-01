@@ -72,7 +72,9 @@
     };
 };
 
-
+&caps_word {
+	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE HOME END LEFT RIGHT>;
+};
 
 &kscan0 {
 	debounce-period = <20>;
@@ -111,11 +113,8 @@
 #define U_BOOT &bootloader
 
 #define U_BASE   0
-// #define U_EXTRA  1 //extra layer when you want an extra base layer for eg. games
-// #define U_TAP    2 //layer without homerow mods or any other mods
 #define U_BUTTON 1
 #define U_NAV    2
-// #define U_MOUSE  3
 #define U_MEDIA  3
 #define U_NUM    4
 #define U_SYM    5
@@ -140,17 +139,6 @@
 &none             &none         &u_lt U_MEDIA ESC  &u_lt U_NUM SPC  &u_lt /*U_MOUSE*/ TAB		&u_lt U_SYM RET  &u_lt U_NAV BSPC  &u_lt U_FUN DEL  &none           &none
             >;
         };
-
-        button_layer {
-            label = "BUTTON";
-            bindings = <
-U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
-&kp LGUI         &kp LALT         &kp LCTRL        &kp LSHFT        &none            &none            &kp LSHFT        &kp LCTRL        &kp LALT         &kp LGUI         
-U_UND            U_CUT            U_CPY            U_PST            U_RDO            U_RDO            U_PST            U_CPY            U_CUT            U_UND            
-&none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-            >;
-        };
-
 
     };
 };
