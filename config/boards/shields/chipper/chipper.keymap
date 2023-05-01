@@ -133,17 +133,5 @@
 &none             &none         &u_lt U_MEDIA ESC  &u_lt U_NAV SPC  &u_lt U_MOUSE TAB		&u_lt U_SYM RET  &u_lt U_NUM BSPC  &u_lt U_FUN DEL  &none           &none
             >;
         };
-            
-        
-
-        button_layer {
-            label = "BUTTON";
-            bindings = <
-&kp LC(Z)            &kp LC(X)            &kp LC(C)            &kp LC(V)            &kp LC(Y)            &kp LC(Y)            &kp LC(V)            &kp LC(C)            &kp LC(X)            &kp LC(Z)            
-&kp LGUI         &kp LALT         &kp LCTRL        &kp LSHFT        U_NU             U_NU             &kp LSHFT        &kp LCTRL        &kp LALT         &kp LGUI         
-&kp LC(Z)            &kp LC(X)            &kp LC(C)            &kp LC(V)            &kp LC(Y)            &kp LC(Y)            &kp LC(V)            &kp LC(C)            &kp LC(X)            &kp LC(Z)            
-&none             &none             &none           &none           &none           &none           &none           &none           &none             &none
-            >;
-        };
     };
 };
