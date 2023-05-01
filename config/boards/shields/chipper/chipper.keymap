@@ -100,22 +100,17 @@
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
-
+    
   };
 };
 
-#define U_NP &none // key is not present
-#define U_NA &none // present but not available for use
-#define U_NU &none // available but not used
+
 
 #define U_BOOT &bootloader
 
 #define U_BASE   0
-// #define U_EXTRA  1 //extra layer when you want an extra base layer for eg. games
-// #define U_TAP    2 //layer without homerow mods or any other mods
 #define U_BUTTON 1
 #define U_NAV    2
-// #define U_MOUSE  3
 #define U_MEDIA  3
 #define U_NUM    4
 #define U_SYM    5
