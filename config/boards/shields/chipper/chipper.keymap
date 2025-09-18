@@ -28,6 +28,9 @@
 #define U_SYM    4
 #define U_FUN    5
 #define U_MOUSE  6 //nvt
+#define U_BUTTON 7 //nvt
+#define U_EXTRA  8 //nvt
+#define U_TAP    9 //nvt
 
 #define U_MT(MOD, TAP) &u_mt MOD TAP
 #define U_LT(LAYER, TAP) &u_lt LAYER TAP
