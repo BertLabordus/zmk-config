@@ -46,6 +46,8 @@
 #define U_CUT &kp LC(X)
 #define U_UND &kp LC(Z)
 
+#define U_BOOT &u_bootloader
+
 // Hier staan de layers
 // https://github.com/manna-harbour/miryoku_zmk/blob/master/miryoku/miryoku_babel/miryoku_layer_alternatives.h
 // https://github.com/manna-harbour/miryoku/tree/master/docs/reference
@@ -95,6 +97,39 @@ U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp 
 &kscan0 { debounce-period = <20>; };
 
 / {
+    macros {
+        u_macro_u_bt_sel_0: u_macro_u_bt_sel_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &bt BT_CLR>;
+            label = "Sel 0";
+        };
+        u_macro_u_bt_sel_1: u_macro_u_bt_sel_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &bt BT_CLR>;
+            label = "Sel 1";
+        };
+        u_macro_u_bt_sel_2: u_macro_u_bt_sel_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &bt BT_CLR>;
+            label = "Sel 2";
+        };
+        u_macro_u_bt_sel_3: u_macro_u_bt_sel_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &bt BT_CLR>;
+            label = "Sel 3";
+        };
+        u_macro_u_bt_sel_4: u_macro_u_bt_sel_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4 &bt BT_CLR>;
+            label = "Sel 4";
+        };
+    };
+
     behaviors {
         u_mt: u_mt {
           compatible = "zmk,behavior-hold-tap";
@@ -110,6 +145,24 @@ U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp 
           flavor = "tap-preferred";
           bindings = <&mo>, <&kp>;
         };
+        u_caps_word: u_caps_word { \
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&caps_word>, <&kp CAPS>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        u_bt_sel_0: u_bt_sel_0 { \
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&bt BT_SEL 0>, <&u_macro_u_bt_sel_0>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        u_bt_sel_0: u_bt_sel_1 { \
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&bt BT_SEL 1>, <&u_macro_u_bt_sel_1>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
@@ -123,9 +176,20 @@ U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp 
                 U_MT(LGUI, A)     U_MT(LALT, S)     U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G                   &kp H               U_MT(LSHFT, J)      U_MT(LCTRL, K)    U_MT(LALT, L)     U_MT(LGUI, SQT)
                 U_LT(U_BUTTON, Z) U_MT(RALT, X)     &kp C               &kp V               &kp B                   &kp N               &kp M               &kp COMMA         U_MT(RALT, DOT)   U_LT(U_BUTTON, SLASH)
                 U_NP              U_NP              U_LT(U_MEDIA, ESC)  U_LT(U_NAV, SPACE)  U_LT(U_MOUSE, TAB)      U_LT(U_SYM, RET)    U_LT(U_NUM, BSPC)   U_LT(U_FUN, DEL)  U_NP              U_NP
-
              >;
             label = "Base";
         };
+
+        nav_layer {
+            bindings = <
+                U_BOOT      U_NP        U_NU       U_NU       U_NA              U_RDO             U_PST             U_CPY             U_CUT             U_UND
+                &kp LGUI    &kp LALT    &kp LCTRL  &kp LSHFT  U_NA              &u_caps_word      &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT
+                U_NA        &kp RALT    U_NU       U_NU       U_NA              &kp INS           &kp HOME          &kp PG_DN         &kp PG_UP         &kp END
+                U_NP        U_NP        U_NA       U_NA       U_NA              &kp RET           &kp BSPC          &kp DEL           U_NP              U_NP
+             >;
+            label = "Nav";
+        };
+
+        
     };
 };
