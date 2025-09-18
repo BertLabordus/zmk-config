@@ -96,28 +96,28 @@ U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp 
             bindings = < MIRYOKU_ALTERNATIVES_BASE_QWERTY >;
             label = "Base";
         };
-        
-        default_layer {
+
+        nav_layer {
             bindings = < MIRYOKU_ALTERNATIVES_NAV >;
             label = "Nav";
         };
-        
-        default_layer {
+
+        media_layer {
             bindings = < MIRYOKU_ALTERNATIVES_MEDIA >;
             label = "Media";
         };
-        
-        default_layer {
+
+        num_layer {
             bindings = < MIRYOKU_ALTERNATIVES_NUM >;
             label = "Num";
         };
-        
-        default_layer {
+
+        sym_layer {
             bindings = < MIRYOKU_ALTERNATIVES_SYM >;
             label = "Sym";
         };
-        
-        default_layer {
+
+        fun_layer {
             bindings = < MIRYOKU_ALTERNATIVES_FUN >;
             label = "Fun";
         };
