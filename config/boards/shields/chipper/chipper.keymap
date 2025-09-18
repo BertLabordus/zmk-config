@@ -1,26 +1,7 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
-// #define COMBO_TIMEOUT 60
-
-// #define U_BASE   0
-// #define U_EXTRA  1
-// #define U_TAP    2
-// #define U_BUTTON 3
-// #define U_NAV    4
-// #define U_MOUSE  5
-// #define U_MEDIA  6
-// #define U_NUM    7
-// #define U_SYM    8
-// #define U_FUN    9
 
 #define U_BASE   0
 #define U_NAV    1
@@ -49,10 +30,6 @@
 
 #define U_BOOT &u_bootloader
 
-// Hier staan de layers
-// https://github.com/manna-harbour/miryoku_zmk/blob/master/miryoku/miryoku_babel/miryoku_layer_alternatives.h
-// https://github.com/manna-harbour/miryoku/tree/master/docs/reference
-
 #define U_TAPPING_TERM 200
 
 #define U_MACRO(name,...) \
@@ -78,6 +55,18 @@
   }; \
 };
 
+#define MIRYOKU_DOUBLE_TAP_GUARD(NAME, BINDING) \
+/ { \
+  behaviors { \
+    NAME: NAME { \
+      compatible = "zmk,behavior-tap-dance"; \
+      #binding-cells = <0>; \
+      tapping-term-ms = <U_TAPPING_TERM>; \
+      bindings = <&none>, <BINDING>; \
+    }; \
+  }; \
+};
+
 // Combineer een marco en shift behavior functie
 // In dit geval handig voor het koppelen en loskoppelen van bleutooth apparaten (e.g. normaal: <&bt BT_SEL 3> en met shift: <&u_macro_u_bt_sel_3>)
 #define MIRYOKU_SHIFT_MACRO(NAME, BINDING, SHIFT_BINDING) \
@@ -88,6 +77,8 @@ MIRYOKU_SHIFT_MACRO(u_bt_sel_0, &bt BT_SEL 0, &bt BT_SEL 0 &bt BT_CLR)
 MIRYOKU_SHIFT_MACRO(u_bt_sel_1, &bt BT_SEL 1, &bt BT_SEL 1 &bt BT_CLR)
 MIRYOKU_SHIFT_MACRO(u_bt_sel_2, &bt BT_SEL 2, &bt BT_SEL 2 &bt BT_CLR)
 MIRYOKU_SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_CLR)
+
+MIRYOKU_DOUBLE_TAP_GUARD(u_bootloader, &bootloader)
 
 &kscan0 { debounce-period = <20>; };
 
@@ -119,14 +110,12 @@ MIRYOKU_SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_CLR)
           bindings = <&out OUT_TOG>, <&out OUT_USB>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        u_bootloader: u_bootloader {
-          compatible = "zmk,behavior-tap-dance";
-          #binding-cells = <0>;
-          tapping-term-ms = <U_TAPPING_TERM>;
-          bindings = <&none>, <&bootloader>;
-        };
     };
 };
+
+// Hier staan de layers
+// https://github.com/manna-harbour/miryoku_zmk/blob/master/miryoku/miryoku_babel/miryoku_layer_alternatives.h
+// https://github.com/manna-harbour/miryoku/tree/master/docs/reference
 
 / {
     keymap {
